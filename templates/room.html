@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style2.css')}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="content">
 
         <div class="message-box">
-            <h2>Chat Room: {{code}}</h2>
+            <h2>Chat Room Code: {{code}}</h2>
             <div class="messages" id="messages"></div>
 
             <div class="inputs">
@@ -30,10 +30,10 @@
         const createMessage = (name,msg) =>{
             const content =  `
             <div class="text">
-                <span>
-                    <strong>${name}</strong>: ${msg}
+                <span class="muted1">
+                    <strong class="muted3>">${name}</strong>: ${msg}
                     </span>
-                    <span class="muted">
+                    <span class="muted2">
                         ${new Date().toLocaleString()}
                         </span>
                 </div>

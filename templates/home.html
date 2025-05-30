@@ -4,29 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="content">
+    <link rel="stylesheet" href=" {{ url_for('static',filename='css/style.css') }}">
 
-        <form method="post" class="buttons">
-        <h1>Enter the Chat Room</h1>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<style>
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+  body {
+   
+    background-image: url("{{ url_for('static',filename='img/b1.jpg') }}");
+ 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Optional: Remove overflow if content is smaller */
+    overflow: hidden;
+  }
+</style>
+
+</head>
+<body class="body-home">
+    <div class="container1">
+
+<div class="container2">
+
+    <form method="post" class="buttons">
+        <h2>Create or Join The Room</h2>
         <div>
-            <input type="text" value="{{name}}" placeholder="Pick a name" name="name">
+            <input type="text" value="{{name}}" placeholder="Enter Your Name" name="name">
         </div>
         <div class="join">
             <input type="text" value="{{code}}" placeholder="Room Code" name="code">
             <button type="submit" name="join">Join a Room</button>
         </div>
-        <button type="submit" name="create" class="create-btn">Create a Room</button>
+        <div class="btn1">
+            <button type="submit" name="create" class="create-btn">Create a Room</button>
+        </div>
         {% if error %}
         <ul>
             <li>{{error}}</li>
         </ul>
         {% endif %}
-        </form>
-
+    </form>
+    
+</div>
     </div>
+
+
 </body>
 </html>
